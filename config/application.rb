@@ -17,6 +17,10 @@ module Crowdpublishtv
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib) # add this line
 
+    # Config for apis.
+    config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
+    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+
     # Config for Rack::Cors
     config.middleware.insert_before 0, Rack::Cors do
       allow do
@@ -37,13 +41,5 @@ module Crowdpublishtv
     config.assets.enabled = true
 #    Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
     config.assets.paths << "#{Rails.root}/app/assets/video"
-    config.action_dispatch.default_headers = {
-       'X-Frame-Options' => 'ALLOWALL',
-       'X-XSS-Protection' => '1; mode=block',
-       'X-Content-Type-Options' => 'nosniff',
-       'X-Download-Options' => 'noopen',
-       'X-Permitted-Cross-Domain-Policies' => 'none',
-       'Referrer-Policy' => 'strict-origin-when-cross-origin'
-     }
   end
 end

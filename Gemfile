@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.7.0"
+ruby "2.7.1"
 
 gem "rails", "~> 6"
 gem "sprockets", "~> 3"
@@ -46,6 +46,7 @@ gem 'recaptcha', require: "recaptcha/rails"
 gem "grape"
 gem 'grape-active_model_serializers'
 gem 'jwt'
+gem 'rack-mini-profiler'
 
 group :test, :development do
   gem 'minitest'

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  mount Api::UsersApi, at: "/"
-
   resources :relationships
 
   resources :users do
@@ -20,8 +18,9 @@ Rails.application.routes.draw do
 
   match 'home',                     to: 'static_pages#home',                via: 'get'
   get 'monthCalendar',              to: 'static_pages#monthCalendar', :as => :update_month_calendar
-  match 'aboutus',                  to: 'static_pages#aboutus',             via: 'get'
+  match 'a',                        to: 'static_pages#aboutus',                 via: 'get'
   match 'faq',                      to: 'static_pages#faq',                 via: 'get'
+  match 'getinvolved',              to: 'static_pages#getinvolved',         via: 'get'
   match 'boardofdirectors',         to: 'static_pages#boardofdirectors',    via: 'get'
   match 'tos',                      to: 'static_pages#tos',                 via: 'get'
   match 'livestream',               to: 'static_pages#livestream',          via: 'get'
@@ -30,6 +29,7 @@ Rails.application.routes.draw do
   match 'jointheteam',              to: 'static_pages#jointheteam',         via: 'get'
   match 'bystanderguidelines',      to: 'static_pages#bystanderguidelines', via: 'get'
   match 'drschaeferspeaking',       to: 'static_pages#drschaeferspeaking',  via: 'get'
+  match 'seniorliving',             to: 'static_pages#seniorliving',        via: 'get'
   match 'studyhall',                to: 'static_pages#studyhall',           via: 'get'
   match 'blocked',                  to: 'static_pages#blocked',             via: 'get'
   match 'privacy',                  to: 'static_pages#privacy_policy',      via: 'get'
@@ -97,4 +97,14 @@ Rails.application.routes.draw do
       get 'buy'
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      devise_for :users
+      resources :users
+      resources :sessions
+      resources :events
+    end
+  end
+
 end

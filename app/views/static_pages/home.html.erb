@@ -1,29 +1,30 @@
 <div class="row mt-2" id = "heroImage">
-  <!-- DO NOT DELETE Where the home page images came from:
-       https://unsplash.com/photos/IL4WL6bf-h4
+  <!-- https://unsplash.com/photos/IL4WL6bf-h4
        https://unsplash.com/photos/RIt88XBR3G0
-       https://unsplash.com/photos/rrI02QQ9GSQ 
-       https://unsplash.com/photos/SJvDxw0azqw 
-  -->  
+       https://unsplash.com/photos/rrI02QQ9GSQ
+       https://unsplash.com/photos/SJvDxw0azqw
+  -->
 
-  <div class="col-lg-5 pt-3 pb-4 pl-1 ml-3">
+  <div class="col pt-3 pl-1 ml-3" style = "height: 10%; width: 20%">
     <% flash.each do |key, value| %>
       <div class="<%= flash_class(key) %>" style = "height:50px">
         <%= value %>
       </div>
     <% end %>
 
-    <h1 class="text-center maroon mt-5 pl-2 pt-5" style="font-size: 50px">
+    <h1 class="text-center maroon mt-2 pl-2 pb-0" style="font-size: 50px; width: 90%">
       <strong>Women who inspire you to </strong>
         <%= image_tag("thinqMaroon.png", style: "height: 80px; margin-top: 10px") %>
     </h1>
-    <h2 class="maroon pl-4" style="font-size:24px">
-      <li style="margin-bottom: 10px"> A network of students, teachers, parents, and STEM professionals helping women to become confident in STEM classes & careers</li>
-      <li> Free video chat for all women! RSVP to or schedule casual conversations, career networking sessions, homework help, book clubs, meetings, etc.</li>
-    </h2>
+    <p class="text-center pl-4 ml-2 mb-0" style = "font-size: 125%; width: 87%; text-align: left !important">
+      <br>A network of students, teachers, parents, and STEM professionals helping women to become confident in STEM classes & careers.<br>
+    </p>
 
-    <div class=" text-center" >
-        <%= render 'layouts/countdown_clock' %>
+    <p class="text-center pl-4 ml-2 mb-0" style = "font-size: 125%; width: 87%; text-align: left !important">
+      <br>Free video chat for all women! RSVP to or schedule casual conversations, career networking sessions, homework help, book clubs, meetings, etc.<br>
+    </p>
+
+    <div class="text-center" style="height: 40px">
     </div>
   </div>
 
@@ -31,29 +32,77 @@
   </div>
 </div>
 
-      <div>
-        <div class="convo-container text-center" style="background-color: #8C1D40">
-          <!-- col-lg-3 col-md-6 -->
-          <h1 class = "white">Drop in to these Conversations</h1>
-          <h2 style="color:#FFF"> Everyone is welcome!</h2>
+<div class="block" style="width: 100%; height: 25px; background-color: #8C1D40;">
 
-          <% if user_signed_in? %>
-            <%= link_to 'Host a Conversation', new_event_path, class: "btn btn-warning", title: "Host drop-in conversation sessions or invite people to ask questions about your area of expertise" %>
-          <% end %>
+</div>
+
+<div class="mt-2 pb-1" style="padding-top: 0px !important; text-align: center">
+  <h1 class="text-center pt-3"><strong>
+    Discover, Learn, & Converse </strong>
+  </h1>
+  <hr class="title-divider" style="width: 45%; border-width: 3.5px; border-color: #FFC627;">
+</div>
+
+<div class="row" style="margin-bottom: 30px">
+    <!--study hall and conversation section -->
+
+    <div class="col-lg-6 col-md-12 col-sm-12 pt-2" style="padding-top: 1rem !important">
+      <!--conversations column-->
+      <%= image_tag("convo_photo.png", class:"mx-auto d-block pb-3", style: "border-radius: 112px; width: 50%;")%>
+      <h2 class="text-center"><strong>Conversations</strong>
+      </h2>
+      <hr class="black-divider" style="width: 35%; border-width: 3.5px; border-color: black;">
+      <p class = "text-center" style="width: 80%; margin: auto">Join video chats where experienced women who are hiring empower the next generation of STEM professionals. <br>Ask for advice and find out how to get your first tech job!
+      </p>
+      <div class="col-lg-12 col-md-12 mx-auto d-block text-center" style = "min-height:42%; justify-content:flex-end">
+        <%= render 'layouts/countdown_clock' %>
+      </div>
+    </div>
+
+    <!--end of conversations column-->
+
+    <div class="col-lg-6 col-md-12 col-sm-12 pb-5 pt-3 mt-3" style="margin-top: 0rem !important">
+      <!--study hall column; col-md-6 col-lg-6 col-sm-12 col-xs-12-->
+      <%= image_tag("activism_hall.jpg", class:" mx-auto d-block  pb-3", style: "border-radius:112px; width:50%;")%>
+      <h2 class="text-center" style="margin-top: 4px"><strong>Drop-In Hours</strong>
+      </h2>
+      <hr class="black-divider" style="width: 35%; border-width: 3.5px; border-color: black;">
+      <p class = "text-center" style="width: 80%; margin: auto">
+        Join a community of student developers and designers to network and get peer feedback. <br> Please drop in and interrupt us to find out what we're up to!
+      </p>
+      <div class="col-lg-12 col-md-12 col-sm-7 mx-auto d-block text-center" style = "min-height:42%; justify-content:flex-end">
+        <%= render 'layouts/countdown_clockstudy' %>
+      </div>
+    </div>
+</div>
+    <!--end of drop in column-->
+      <div>
+        <div class="convo-container text-center">
+          <!-- col-lg-3 col-md-6 -->
+          <h2 class = "text-center" style="font-size: 250%"><strong>Conversations<strong>
+          </h2>
+          <hr class="title-divider" style="width: 27%; border-width: 3.5px; border-color: #FFC627;">
+          <br>
+          <p class = "text-center ml-5 pl-3 pt-1 pb-1 pr-2" style="width: 75%; margin: auto; text-align: left !important; font-size: 140%; background-color: #ffc107; border-radius: 5px 5px 0px 0px; color: #8C1D40; box-shadow: 0px 5px 5px grey;">
+            Drop in to these conversations. Everyone is welcome!
+          </p>
         </div>
       </div>
 
-      <div class="tabContainer text-center pr-2" style="background-color: #8C1D40" >
-        <div class="buttonContainer pr-3" >
-          <button onclick="showPanel(0,'#4caf50')">List View</button>
-          <button onclick="showPanel(1,'#4caf50')">Daily View</button>
-          <button onclick="showPanel(2,'#4caf50')">Monthly View</button>
+      <div class="tabContainer text-center" style="width: 95%; margin: auto; background-color: #8C1D40; border-radius: 4px; padding-right: 0.2rem; padding-left: 0.2rem; padding-bottom: 0.2rem; box-shadow: 0px 5px 5px grey;" >
+        <div class="buttonContainer pl-3 pr-3 pt-3" style="height: 100px;">
+          <button onclick="showPanel(0,'#4caf50')" class= "btn btn-primary-week" style="float: left; width: 20%; height:65px; min-width: 60px; border-color: #ffffff; overflow: hidden">List View</button>
+          <button onclick="showPanel(1,'#4caf50')" class= "btn btn-primary-week" style="float: left; width: 20%; height:65px; min-width: 60px; border-color: #ffffff; overflow: hidden">Daily View</button>
+          <button onclick="showPanel(2,'#4caf50')" class= "btn btn-primary-week" style="float: left; width: 20%; height:65px; min-width: 95px; border-color: #ffffff; overflow: hidden">Monthly View</button>
+          <% if user_signed_in? %>
+            <%= link_to 'Host Conversation', new_event_path, class: "btn btn-warning", title: "Host drop-in conversation sessions or invite people to ask questions about your area of expertise", style: "padding-top: 9px !important; float: right; width: 20%; height:65px; line-height: 250%; overflow: hidden" %>
+          <% end %>
         </div>
 
         <div class="tabPanel">
           <%= render 'layouts/convocalendar', collection: @conversations %>
         </div>
-        <div class="tabPanel container-fluid">
+        <div class="tabPanel container-fluid pl-0 pr-0">
           <%= render 'layouts/weeklycalendar', eventPartial: "layouts/renderdayhome"%>
         </div>
         <div class="tabPanel container-fluid">
