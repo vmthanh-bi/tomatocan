@@ -114,25 +114,41 @@ h2 {
 //FOOTER.SCSS: This is all the css used for the footer
 footer {
   position: relative;
-  padding-top: 15px;
+  padding-top: 35px;
   padding-bottom: 15px;
   margin: 0;
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: left;
-  background-color: $brand-primary;
+  background-color: #2B2D2F;
   font-family: Helvetica;
   font-size: 12px;
 }
 
 #copyright {
   position: absolute;
+  font-size: 15px;
   bottom: 0;
   right: 0;
 }
 
+#f-social {
+    &:hover {
+      text-decoration: none;
+    }
+}
+
 
 footer a.f-link {
-  color: $brand-gray;
+  color: $brand-white;
+
+  &:hover {
+    color: $brand-white;
+    text-decoration: underline;
+  }
+}
+
+footer a.f-phone {
+  color: $brand-white;
 
   &:hover {
     text-decoration: none;
@@ -149,7 +165,8 @@ footer div.col-sm-3 {
 }
 
 footer small {
-  color: $brand-secondary;
+  color: $brand-white;
+  margin-right: 40px;
 }
 
 
@@ -160,7 +177,6 @@ footer small {
   .btn-primary {
     color: $brand-gray;
     background-color: $brand-primary;
-    ;
     border-color: #771936;
     font: "Helvetica"
   }
